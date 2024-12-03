@@ -1,0 +1,45 @@
+import turtle
+import time
+
+# Setup the screen
+screen = turtle.Screen()
+screen.bgcolor("black")  # Set background to black
+screen.title("Your Name in Turtle Graphics")
+
+# Create our turtle
+t = turtle.Turtle()
+t.speed(5)  # Set the drawing speed (1-10)
+t.pensize(2)  # Set the pen thickness
+
+# Function to draw text with a colorful border
+def write_name_with_border():
+    # Colors for the border effect
+    colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+    
+    # Starting position
+    t.penup()
+    t.goto(-150, 0)  # Adjust this position if needed
+    
+    # Your name here
+    name = "ALEX"  # Change this to your name
+    
+    # Write name with colorful border
+    for color in colors:
+        t.color(color)
+        t.write(name, font=("Arial", 60, "bold"))
+        t.forward(5)  # Small shift for 3D effect
+        t.right(3)   # Small rotation for circular effect
+    
+    # Final white text on top
+    t.color("white")
+    t.goto(-150, 0)
+    t.write(name, font=("Arial", 60, "bold"))
+
+# Hide the turtle cursor
+t.hideturtle()
+
+# Draw the name
+write_name_with_border()
+
+# Keep the window open
+screen.mainloop() 
